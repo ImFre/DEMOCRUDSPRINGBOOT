@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Employee Managment System</title>
+
+
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet" />
+
+<!-- DataTables Bootstrap4 core CSS -->
+<link rel="stylesheet" href="css/dataTables.bootstrap4.min.css" />
+<link rel="stylesheet" href="css/responsive.bootstrap4.min.css">
+<link rel="stylesheet" href="css/buttons.bootstrap4.min.css">
+
+</head>
+<body class="sidebar-mini layout-fixed sidebar-closed sidebar-collapse"
+	style="height: auto;">
+
+    <div class="container">
+           <h1>Employees List</h1>
+			<a th:href="@{/showNewEmployeeForm}"
+			   class="btn btn-primary btn-sm mb-3">Add Employee</a>
+    
+    </div>
+
+	<div class="container p-4">
+	
+		<!-- <div class="row"> -->
+
+			<table id="dtDynamicVerticalScrollExample" class="table table-hover table-bordered"
+				style="width: 100%">
+				
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Position</th>
+						<th>Office</th>
+						<th>Age</th>
+						<th>Start date</th>
+						<th>Salary</th>
+						<th>Action</th>
+						<th>Action</th>
+
+					</tr>
+				</thead>
+				<tbody>
+
+					<tr th:each="employee : ${listEmployees}">
+
+						<td th:text="${employee.name}"></td>
+						<td th:text="${employee.position}"></td>
+						<td th:text="${employee.office}"></td>
+						<td th:text="${employee.age}"></td>
+						<td th:text="${employee.startDate}"></td>
+						<td th:text="${employee.salary}"></td>
+						
+						
+
+                        <td> 
+                           <a th:href="@{/showFormForUpdate/{id}(id=${employee.id})}"
+							class="btn btn-primary">Update</a> 
+							
+						</td>
+						<td>
+						 
+						  <a th:href="@{/deleteEmployee/{id}(id=${employee.id})}"
+							class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+						</td>
+
+
+
+					</tr>
+
+				</tbody>
+				<tfoot>
+					<tr>
+						<th>####</th>
+						<th>####</th>
+						<th>####</th>
+						<th>####</th>
+						<th>####</th>
+						<th>####</th>
+						<th>####</th>
+						<th>####</th>
+						
+				
+					</tr>
+				</tfoot>
+			</table>
+
+		</div>
+		
+	<!-- </div> -->
+
+	<!-- REQUIRED SCRIPTS -->
+
+	<!-- jQuery -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/datatables.min.js"></script>
+	<script src="js/dataTables.bootstrap4.min.js"></script>
+	<script src="js/responsive.bootstrap4.min.js" type="text/javascript"></script>
+	
+	
+	<!-- Bootstrap 4 -->
+	<script src="js/bootstrap.bundle.min.js"></script>
+	<!-- Font Awesome -->
+	<script src="js/fontawesome.all.min.js"></script>
+	<!-- Function DataTable -->
+	<script src="js/functionDataTable.js"></script>
+
+</body>
+</html>
