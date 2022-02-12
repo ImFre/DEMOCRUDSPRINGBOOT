@@ -32,6 +32,9 @@ public class Employee {
 
 	@Column(name = "salary")
 	private double salary;
+	
+	
+
 
 	public long getId() {
 		return id;

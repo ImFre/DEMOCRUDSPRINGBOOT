@@ -18,16 +18,21 @@
 <body class="sidebar-mini layout-fixed sidebar-closed sidebar-collapse"
 	style="height: auto;">
 
-    <div class="container">
-           <h1>Employees List</h1>
+    <div class="container mt-2">
+          <div class="jumbotron p-2">
+
+			<h1>Employee List</h1>
+			<hr class="my-2">
+			
 			<a th:href="@{/showNewEmployeeForm}"
 			   class="btn btn-primary btn-sm mb-3">Add Employee</a>
     
-    </div>
+         </div>
+     </div>    
 
-	<div class="container p-4">
+	<div class="container">
 	
-		<!-- <div class="row"> -->
+
 
 			<table id="dtDynamicVerticalScrollExample" class="table table-hover table-bordered"
 				style="width: 100%">
@@ -92,7 +97,6 @@
 
 		</div>
 		
-	<!-- </div> -->
 
 	<!-- REQUIRED SCRIPTS -->
 
